@@ -1,164 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Rosha Service - Housekeeping, Babysitting, Dog Care</title>
-<style>
-  /* Reset & base */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  .container {
-    background: white;
-    border-radius: 15px;
-    max-width: 350px;
-    width: 100%;
-    padding: 25px 20px 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  header h1 {
-    font-size: 1.9rem;
-    color: #2c3e50;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-  header p {
-    font-size: 1rem;
-    color: #7f8c8d;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .service-card {
-    background: #f7f9fc;
-    border-radius: 12px;
-    padding: 15px 20px;
-    box-shadow: 0 5px 12px rgba(44, 62, 80, 0.08);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(44, 62, 80, 0.2);
-  }
-  .service-icon {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 28px;
-    box-shadow: 0 4px 8px rgba(101, 67, 191, 0.5);
-    transition: background 0.3s ease;
-  }
-  .service-card:hover .service-icon {
-    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
-  }
-  .service-content {
-    flex: 1;
-  }
-  .service-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #34495e;
-    margin-bottom: 4px;
-  }
-  .service-description {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    line-height: 1.3;
-  }
-  /* Responsive for mobile */
-  @media screen and (max-width: 400px) {
-    .container {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPINHOMESERVICES - Professional Housekeeping</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9fbfd;
+      color: #333;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+    img {
       max-width: 100%;
-      padding: 20px 15px 25px;
+      height: auto;
+      display: block;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: #1e90ff;
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(30,144,255,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     header h1 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
     }
-    .service-card {
-      padding: 12px 15px;
-      gap: 12px;
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+    }
+    nav a:hover,
+    nav a.active {
+      background: white;
+      color: #1e90ff;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    #hero {
+      background: linear-gradient(rgba(30,144,255,0.6), rgba(30,144,255,0.6)), url('https://images.unsplash.com/photo-1581574201264-132a787b34f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      color: white;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    #hero .content {
+      max-width: 700px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.35);
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+    }
+    #hero h2 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    #hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    #hero .btn {
+      background: #ffbb33;
+      color: #1e90ff;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1.1rem;
+      margin: 0 0.5rem;
+      box-shadow: 0 5px 10px rgba(255, 187, 51, 0.4);
+    }
+    #hero .btn:hover {
+      background: #e6a427;
+      color: #fff;
+      box-shadow: 0 7px 15px rgba(230, 164, 39, 0.6);
+    }
+
+    /* Services Section */
+    #services {
+      padding: 4rem 1rem 3rem;
+      background: white;
+    }
+    #services h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #1e90ff;
+      letter-spacing: 1.2px;
+    }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .service-item {
+      background: #f0f8ff;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(30,144,255,0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 7px 15px rgba(30,144,255,0.3);
     }
     .service-icon {
-      width: 45px;
-      height: 45px;
-      font-size: 24px;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #1e90ff;
     }
     .service-title {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
-  }
-</style>
-<!-- Using simple icons with SVG inline for neat look -->
+    .service-desc {
+      font-size: 1rem;
+      color: #555;
+    }
+    
+    /* About Section */
+    #about {background: #1e90ff;
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    #about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1.2px;
+    }
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* Testimonials */
+    #testimonials {
+      padding: 4rem 1rem 2rem;
+      background: #f9fbfd;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #testimonials h2 {
+      color: #1e90ff;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1.2px;
+    }
+    .testimonial {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(30,144,255,0.1);
+      margin-bottom: 2rem;
+      position: relative;
+      font-style: italic;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 4rem;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      color: #1e90ff;
+      opacity: 0.15;
+      font-family: serif;
+    }
+    .testimonial p {
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .testimonial .client {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e90ff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: white;
+      padding: 4rem 1rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(30,144,255,0.1);
+    }
+    #contact h2 {
+      color: #1e90ff;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1.2px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+    input, textarea {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1.5px solid #ddd;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+      resize: vertical;
+    }
+    input:focus, textarea:focus {
+      border-color: #1e90ff;
+      outline: none;
+    }
+    textarea {
+      min-height: 120px;
+    }
+    button[type="submit"] {
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 0.85rem 2rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      align-self: center;
+      box-shadow: 0 5px 10px rgba(30,144,255,0.4);
+      transition: background 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background: #0056b3;
+      box-shadow: 0 7px 15px rgba(0,86,179,0.6);
+    }
+
+    /* Footer */
+    footer {
+      background: #1e90ff;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.8px;
+      box-shadow: 0 -2px 8px rgba(30,144,255,0.3);
+    }
+    footer a {
+      color: #ffbb33;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      #hero h2 {
+        font-size: 2rem;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <header>
-      <h1>Rosha Service</h1>
-      <p>Professional Housekeeping, Babysitting & Dog Care Services</p>
-    </header>
-    <main>
-      <article class="service-card" tabindex="0" aria-label="Housekeeping Service">
-        <div class="service-icon" aria-hidden="true">
-          <!-- Broom icon SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="30" height="30"><path d="M2 20h20v2H2v-2zm14.303-8.707 2.829-2.829a1 1 0 0 0 0-1.414l-3.182-3.182a1 1 0 0 0-1.414 0l-2.829 2.829-2.121-2.121L14.586 2H12v2l-5 5L6 7 4 9l3 3-2 2-2-2 2 3-1 1v1h11v-1l-3.697-3.707z"/></svg>
-        </div>
-        <div class="service-content">
-          <h2 class="service-title">Housekeeping</h2>
-          <p class="service-description">Reliable cleaning and home maintenance services to keep your living space spotless and comfortable.</p>
-        </div>
+  <header>
+    <div class="container">
+      <h1>RPINHOMESERVICES</h1>
+      <nav aria-label="Primary Navigation">
+        <a href="#hero" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" role="banner" aria-label="Welcome to RPINHOMESERVICES">
+    <div class="content">
+      <h2>Exceptional Housekeeping Services</h2>
+      <p>Reliable, Professional, and Thorough cleaning solutions tailored to your needs.</p><button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book Now</button>
+      <button class="btn" onclick="window.location='#services'">Our Services</button>
+    </div>
+  </section>
+
+  <section id="services" class="container" aria-label="Housekeeping Services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <article class="service-item" tabindex="0" aria-describedby="desc-standard">
+        <div class="service-icon" aria-hidden="true">🧹</div>
+        <h3 class="service-title">Standard Cleaning</h3>
+        <p class="service-desc" id="desc-standard">Routine cleaning of living spaces, kitchens, bathrooms, and bedrooms to keep your home fresh and tidy.</p>
       </article>
-      <article class="service-card" tabindex="0" aria-label="Babysitting Service">
-        <div class="service-icon" aria-hidden="true">
-          <!-- Baby icon SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="30" height="30"><path d="M12 2a4 4 0 0 0-3.92 3H6a2 2 0 0 0-2 2v1.723a9.005 9.005 0 0 0 2-.14V9a7 7 0 0 1 14 0v.583a9.064 9.064 0 0 0 2 .14V7a2 2 0 0 0-2-2h-2.08a4 4 0 0 0-3.92-3Zm-2 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0ZM7 20h10v2H7v-2Z"/></svg>
-        </div>
-        <div class="service-content">
-          <h2 class="service-title">Babysitting</h2>
-          <p class="service-description">Caring and attentive babysitting tailored to your child's needs, providing peace of mind for parents.</p>
-        </div>
+      <article class="service-item" tabindex="0" aria-describedby="desc-deep">
+        <div class="service-icon" aria-hidden="true">🛁</div>
+        <h3 class="service-title">Deep Cleaning</h3>
+        <p class="service-desc" id="desc-deep">Thorough cleaning including hard-to-reach places, appliances, and detailed scrubbing for a spotless home.</p>
       </article>
-      <article class="service-card" tabindex="0" aria-label="Dog Care Service">
-        <div class="service-icon" aria-hidden="true">
-          <!-- Paw icon SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="30" height="30"><path d="M20.8 7.2c-.4-.4-1-.4-1.5-.1a4.99 4.99 0 0 0-6.1 7 7.4 7.4 0 0 1-.2 1.8c-.4 1.3-2 1.7-3.2 1.7-1 0-2-.3-2.9-.8a1.7 1.7 0 0 1 2-2.8c.6.5 1.3.7 2 .7a.5.5 0 0 1 0 1c-.6 0-1-.3-1.5-.7-.7-.7-1.1-1.6-1-2.6C6 9.3 7.4 7.5 9.4 6.9 10.3 5.6 12 5 13.5 6a2 2 0 0 1 2.5 1.8c.4.8.4 1.6-.2 2.3l2 1.7a1 1 0 0 0 1.5-1.2c-.2-.5-.5-.8-.7-1z"/></svg>
-        </div>
-        <div class="service-content">
-          <h2 class="service-title">Dog Care</h2>
-          <p class="service-description">Safe and loving care for your dogs, including walking, feeding, and companionship services.</p>
-        </div>
+      <article class="service-item" tabindex="0" aria-describedby="desc-moveout">
+        <div class="service-icon" aria-hidden="true">📦</div>
+        <h3 class="service-title">Move-in/Move-out Cleaning</h3>
+        <p class="service-desc" id="desc-moveout">Perfect preparation or cleanup for moving in or out, ensuring a pristine environment for new beginnings.</p>
       </article>
-    </main>
-  </div>
+      <article class="service-item" tabindex="0" aria-describedby="desc-custom">
+        <div class="service-icon" aria-hidden="true">🧼</div>
+        <h3 class="service-title">Custom Cleaning</h3>
+        <p class="service-desc" id="desc-custom">Tailored cleaning plans adapted to your specific requests and requirements for your absolute satisfaction.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" aria-label="About RPINHOMESERVICES">
+    <h2>About RPINHOMESERVICES</h2>
+    <p>
+      RPINHOMESERVICES has been dedicated to offering top-notch housekeeping solutions with professionalism and care. 
+      Our trained staff uses eco-friendly products and advanced cleaning techniques to ensure your home is healthy and welcoming. 
+      We are committed to excellence and customer satisfaction in every service we provide.
+    </p>
+  </section>
+
+  <section id="testimonials" aria-label="Customer Testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial" tabindex="0">
+      <p>RPINHOMESERVICES transformed my home! They are thorough, punctual, and friendly. I highly recommend their deep cleaning.</p>
+      <div class="client">- Maria S.</div>
+    </div>
+    <div class="testimonial" tabindex="0">
+      <p>The team was professional and listened to all my custom requests. I feel so comfortable and happy in my clean home now!</p>
+      <div class="client">- James T.</div>
+    </div>
+    <div class="testimonial" tabindex="0">
+      <p>I booked them for move-out cleaning and was amazed at their attention to detail. The landlord was very impressed too.</p>
+      <div class="client">- Anika R.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Email: <a href="mailto:rpinhomeservices@gmail.com">rpinhomeservices@gmail.com</a></p>
+    <p>
+      Follow us:
+      <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+      <a href="#" aria-label="Youtube" title="Youtube">🐦</a>
+      <a href="#" aria-label="Instagram" title="Instagram">📸</a>
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scroll to sections on nav clicks
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetID = link.getAttribute('href').slice(1);
+        document.getElementById(targetID).scrollIntoView({behavior: 'smooth'});
+        navLinks.forEach(lnk => lnk.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+  </script>
 </body>
 </html>
